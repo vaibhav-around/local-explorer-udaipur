@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌊 LakeCity AI - Smart City Explorer (Udaipur)
 
-## Getting Started
+**LakeCity AI** is a sustainable tourism platform built for the Google Lakecity Hackathon 2026. It leverages **Google Gemini AI** and **Google Maps Platform** to turn crowdsourced data into personalized, eco-friendly exploration plans for Udaipur.
 
-First, run the development server:
+## 🚀 The Vision
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Udaipur’s "Hidden Gems" often go unnoticed while main attractions become overcrowded. **LakeCity AI** solves this by:
+
+* **AI-Driven Itineraries:** Using Gemini to plan routes based on real-time vibes, budget, and time.
+* **Smart Proximity:** A custom Geolocation engine that calculates distance to Udaipur landmarks.
+* **Sustainability First:** Redirecting foot traffic to lesser-known spots to preserve the city's heritage.
+
+## 🛠️ Tech Stack
+
+* **Frontend:** Next.js 15 (App Router), Tailwind CSS, shadcn/ui.
+* **AI:** Google Gemini API (`gemini-1.5-flash`).
+* **Maps:** Google Maps JavaScript API & Geolocation API.
+* **Logic:** Custom Haversine formula for distance sorting.
+
+## 📁 Project Structure
+
+```text
+src/
+├── app/            # Next.js Routes & AI API Endpoints
+├── components/     # UI Components (Shadcn + Custom Bars)
+├── hooks/          # useGeolocation.ts (The heart of our local search)
+├── lib/            # utils.ts (Distance calculation logic)
+└── data/           # Udaipur Mock Data (Badi Lake, Ambrai Ghat, etc.)
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ⚙️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Ensure you have **Node.js 18+** and **npm** installed.
 
-## Learn More
+### 2. Setup Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file in the root:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_key_here
+GEMINI_API_KEY=your_key_here
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+### 3. Installation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm install
+npm run dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+
+The app will be live at `http://localhost:3000`.
+
+## 🤝 For the Team
+
+* **Branching:** Please work on `dev` or feature branches. Do not push directly to `master` without a review.
+* **SSH Setup:** Ensure your SSH agent is running (`eval "$(ssh-agent -s)"`) before pushing.
